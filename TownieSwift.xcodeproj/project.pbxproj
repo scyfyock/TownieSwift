@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0453432C2A12882600C4D5F9 /* TownieSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453432B2A12882600C4D5F9 /* TownieSwiftApp.swift */; };
+		0453432E2A12882600C4D5F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453432D2A12882600C4D5F9 /* ContentView.swift */; };
+		045343302A12882700C4D5F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0453432F2A12882700C4D5F9 /* Assets.xcassets */; };
+		045343332A12882700C4D5F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045343322A12882700C4D5F9 /* Preview Assets.xcassets */; };
+		0453433D2A12882800C4D5F9 /* TownieSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453433C2A12882800C4D5F9 /* TownieSwiftTests.swift */; };
+		045343472A12882800C4D5F9 /* TownieSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045343462A12882800C4D5F9 /* TownieSwiftUITests.swift */; };
+		045343492A12882800C4D5F9 /* TownieSwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045343482A12882800C4D5F9 /* TownieSwiftUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		045343392A12882800C4D5F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 045343202A12882600C4D5F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 045343272A12882600C4D5F9;
+			remoteInfo = TownieSwift;
+		};
+		045343432A12882800C4D5F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 045343202A12882600C4D5F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 045343272A12882600C4D5F9;
+			remoteInfo = TownieSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		045343282A12882600C4D5F9 /* TownieSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TownieSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0453432B2A12882600C4D5F9 /* TownieSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownieSwiftApp.swift; sourceTree = "<group>"; };
+		0453432D2A12882600C4D5F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0453432F2A12882700C4D5F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		045343322A12882700C4D5F9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		045343382A12882800C4D5F9 /* TownieSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TownieSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0453433C2A12882800C4D5F9 /* TownieSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownieSwiftTests.swift; sourceTree = "<group>"; };
+		045343422A12882800C4D5F9 /* TownieSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TownieSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		045343462A12882800C4D5F9 /* TownieSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownieSwiftUITests.swift; sourceTree = "<group>"; };
+		045343482A12882800C4D5F9 /* TownieSwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownieSwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		045343252A12882600C4D5F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		045343352A12882800C4D5F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0453433F2A12882800C4D5F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0453431F2A12882600C4D5F9 = {
+			isa = PBXGroup;
+			children = (
+				0453432A2A12882600C4D5F9 /* TownieSwift */,
+				0453433B2A12882800C4D5F9 /* TownieSwiftTests */,
+				045343452A12882800C4D5F9 /* TownieSwiftUITests */,
+				045343292A12882600C4D5F9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		045343292A12882600C4D5F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				045343282A12882600C4D5F9 /* TownieSwift.app */,
+				045343382A12882800C4D5F9 /* TownieSwiftTests.xctest */,
+				045343422A12882800C4D5F9 /* TownieSwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0453432A2A12882600C4D5F9 /* TownieSwift */ = {
+			isa = PBXGroup;
+			children = (
+				0453432B2A12882600C4D5F9 /* TownieSwiftApp.swift */,
+				0453432D2A12882600C4D5F9 /* ContentView.swift */,
+				0453432F2A12882700C4D5F9 /* Assets.xcassets */,
+				045343312A12882700C4D5F9 /* Preview Content */,
+			);
+			path = TownieSwift;
+			sourceTree = "<group>";
+		};
+		045343312A12882700C4D5F9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				045343322A12882700C4D5F9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0453433B2A12882800C4D5F9 /* TownieSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				0453433C2A12882800C4D5F9 /* TownieSwiftTests.swift */,
+			);
+			path = TownieSwiftTests;
+			sourceTree = "<group>";
+		};
+		045343452A12882800C4D5F9 /* TownieSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				045343462A12882800C4D5F9 /* TownieSwiftUITests.swift */,
+				045343482A12882800C4D5F9 /* TownieSwiftUITestsLaunchTests.swift */,
+			);
+			path = TownieSwiftUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		045343272A12882600C4D5F9 /* TownieSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0453434C2A12882800C4D5F9 /* Build configuration list for PBXNativeTarget "TownieSwift" */;
+			buildPhases = (
+				045343242A12882600C4D5F9 /* Sources */,
+				045343252A12882600C4D5F9 /* Frameworks */,
+				045343262A12882600C4D5F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TownieSwift;
+			productName = TownieSwift;
+			productReference = 045343282A12882600C4D5F9 /* TownieSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		045343372A12882800C4D5F9 /* TownieSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0453434F2A12882800C4D5F9 /* Build configuration list for PBXNativeTarget "TownieSwiftTests" */;
+			buildPhases = (
+				045343342A12882800C4D5F9 /* Sources */,
+				045343352A12882800C4D5F9 /* Frameworks */,
+				045343362A12882800C4D5F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0453433A2A12882800C4D5F9 /* PBXTargetDependency */,
+			);
+			name = TownieSwiftTests;
+			productName = TownieSwiftTests;
+			productReference = 045343382A12882800C4D5F9 /* TownieSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		045343412A12882800C4D5F9 /* TownieSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 045343522A12882800C4D5F9 /* Build configuration list for PBXNativeTarget "TownieSwiftUITests" */;
+			buildPhases = (
+				0453433E2A12882800C4D5F9 /* Sources */,
+				0453433F2A12882800C4D5F9 /* Frameworks */,
+				045343402A12882800C4D5F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				045343442A12882800C4D5F9 /* PBXTargetDependency */,
+			);
+			name = TownieSwiftUITests;
+			productName = TownieSwiftUITests;
+			productReference = 045343422A12882800C4D5F9 /* TownieSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		045343202A12882600C4D5F9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					045343272A12882600C4D5F9 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					045343372A12882800C4D5F9 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 045343272A12882600C4D5F9;
+					};
+					045343412A12882800C4D5F9 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 045343272A12882600C4D5F9;
+					};
+				};
+			};
+			buildConfigurationList = 045343232A12882600C4D5F9 /* Build configuration list for PBXProject "TownieSwift" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0453431F2A12882600C4D5F9;
+			productRefGroup = 045343292A12882600C4D5F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				045343272A12882600C4D5F9 /* TownieSwift */,
+				045343372A12882800C4D5F9 /* TownieSwiftTests */,
+				045343412A12882800C4D5F9 /* TownieSwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		045343262A12882600C4D5F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				045343332A12882700C4D5F9 /* Preview Assets.xcassets in Resources */,
+				045343302A12882700C4D5F9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		045343362A12882800C4D5F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		045343402A12882800C4D5F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		045343242A12882600C4D5F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0453432E2A12882600C4D5F9 /* ContentView.swift in Sources */,
+				0453432C2A12882600C4D5F9 /* TownieSwiftApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		045343342A12882800C4D5F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0453433D2A12882800C4D5F9 /* TownieSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0453433E2A12882800C4D5F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				045343492A12882800C4D5F9 /* TownieSwiftUITestsLaunchTests.swift in Sources */,
+				045343472A12882800C4D5F9 /* TownieSwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0453433A2A12882800C4D5F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 045343272A12882600C4D5F9 /* TownieSwift */;
+			targetProxy = 045343392A12882800C4D5F9 /* PBXContainerItemProxy */;
+		};
+		045343442A12882800C4D5F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 045343272A12882600C4D5F9 /* TownieSwift */;
+			targetProxy = 045343432A12882800C4D5F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0453434A2A12882800C4D5F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0453434B2A12882800C4D5F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0453434D2A12882800C4D5F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TownieSwift/Preview Content\"";
+				DEVELOPMENT_TEAM = LA2J8ABWJ4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cfyock.TownieSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0453434E2A12882800C4D5F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TownieSwift/Preview Content\"";
+				DEVELOPMENT_TEAM = LA2J8ABWJ4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cfyock.TownieSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		045343502A12882800C4D5F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LA2J8ABWJ4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cfyock.TownieSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TownieSwift.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TownieSwift";
+			};
+			name = Debug;
+		};
+		045343512A12882800C4D5F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LA2J8ABWJ4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cfyock.TownieSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TownieSwift.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TownieSwift";
+			};
+			name = Release;
+		};
+		045343532A12882800C4D5F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LA2J8ABWJ4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cfyock.TownieSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TownieSwift;
+			};
+			name = Debug;
+		};
+		045343542A12882800C4D5F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LA2J8ABWJ4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cfyock.TownieSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TownieSwift;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		045343232A12882600C4D5F9 /* Build configuration list for PBXProject "TownieSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0453434A2A12882800C4D5F9 /* Debug */,
+				0453434B2A12882800C4D5F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0453434C2A12882800C4D5F9 /* Build configuration list for PBXNativeTarget "TownieSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0453434D2A12882800C4D5F9 /* Debug */,
+				0453434E2A12882800C4D5F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0453434F2A12882800C4D5F9 /* Build configuration list for PBXNativeTarget "TownieSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				045343502A12882800C4D5F9 /* Debug */,
+				045343512A12882800C4D5F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		045343522A12882800C4D5F9 /* Build configuration list for PBXNativeTarget "TownieSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				045343532A12882800C4D5F9 /* Debug */,
+				045343542A12882800C4D5F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 045343202A12882600C4D5F9 /* Project object */;
+}
