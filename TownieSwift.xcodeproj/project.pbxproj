@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0401CE812A12C5E300864049 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401CE802A12C5E300864049 /* Places.swift */; };
 		0453432C2A12882600C4D5F9 /* TownieSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453432B2A12882600C4D5F9 /* TownieSwiftApp.swift */; };
 		0453432E2A12882600C4D5F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453432D2A12882600C4D5F9 /* ContentView.swift */; };
 		045343302A12882700C4D5F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0453432F2A12882700C4D5F9 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 		0453433D2A12882800C4D5F9 /* TownieSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453433C2A12882800C4D5F9 /* TownieSwiftTests.swift */; };
 		045343472A12882800C4D5F9 /* TownieSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045343462A12882800C4D5F9 /* TownieSwiftUITests.swift */; };
 		045343492A12882800C4D5F9 /* TownieSwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045343482A12882800C4D5F9 /* TownieSwiftUITestsLaunchTests.swift */; };
+		04FED2022A1BACFF00AAFE84 /* FullMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FED2012A1BACFF00AAFE84 /* FullMap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0401CE802A12C5E300864049 /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 		045343282A12882600C4D5F9 /* TownieSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TownieSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0453432B2A12882600C4D5F9 /* TownieSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownieSwiftApp.swift; sourceTree = "<group>"; };
-		0453432D2A12882600C4D5F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0453432D2A12882600C4D5F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		0453432F2A12882700C4D5F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		045343322A12882700C4D5F9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		045343382A12882800C4D5F9 /* TownieSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TownieSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +47,8 @@
 		045343422A12882800C4D5F9 /* TownieSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TownieSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		045343462A12882800C4D5F9 /* TownieSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownieSwiftUITests.swift; sourceTree = "<group>"; };
 		045343482A12882800C4D5F9 /* TownieSwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownieSwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		04FED2012A1BACFF00AAFE84 /* FullMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullMap.swift; sourceTree = "<group>"; };
+		04FED2032A1BB92F00AAFE84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +99,11 @@
 		0453432A2A12882600C4D5F9 /* TownieSwift */ = {
 			isa = PBXGroup;
 			children = (
+				04FED2032A1BB92F00AAFE84 /* Info.plist */,
 				0453432B2A12882600C4D5F9 /* TownieSwiftApp.swift */,
 				0453432D2A12882600C4D5F9 /* ContentView.swift */,
+				0401CE802A12C5E300864049 /* Places.swift */,
+				04FED2012A1BACFF00AAFE84 /* FullMap.swift */,
 				0453432F2A12882700C4D5F9 /* Assets.xcassets */,
 				045343312A12882700C4D5F9 /* Preview Content */,
 			);
@@ -258,7 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0453432E2A12882600C4D5F9 /* ContentView.swift in Sources */,
+				04FED2022A1BACFF00AAFE84 /* FullMap.swift in Sources */,
 				0453432C2A12882600C4D5F9 /* TownieSwiftApp.swift in Sources */,
+				0401CE812A12C5E300864049 /* Places.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,8 +430,10 @@
 				DEVELOPMENT_TEAM = LA2J8ABWJ4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TownieSwift/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "REQUIRES LOCATION";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "REQUIRES LOCATION";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -449,8 +461,10 @@
 				DEVELOPMENT_TEAM = LA2J8ABWJ4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TownieSwift/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "REQUIRES LOCATION";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "REQUIRES LOCATION";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
