@@ -12,7 +12,6 @@ import MapKit
 class LocationTrackingViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager: CLLocationManager?
     
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
