@@ -7,47 +7,78 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FDC9E3D3-2A62-4BA3-8B3B-F4D6E9B14F7C"
+            uuid = "52C4D577-9496-4E0B-851E-0C53C52842B8"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TownieSwift/ContentView.swift"
+            filePath = "TownieSwift/FullMap.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "locationManager(_:didFailWithError:didChangeAuthorization:)"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "askForLocation()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "485004D2-AE14-4661-90AD-0FFFDDE22ECA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TownieSwift/FullMap.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "askForLocation()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "FDC9E3D3-2A62-4BA3-8B3B-F4D6E9B14F7C - e9113b8500ad1f3c"
+                  uuid = "485004D2-AE14-4661-90AD-0FFFDDE22ECA - 1a41271599327676"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TownieSwift.mapDisplay.locationManager(_: __C.CLLocationManager, didFailWithError: Swift.Error) -&gt; ()"
+                  symbolName = "TownieSwift.LocationTrackingViewControl.askForLocation() -&gt; ()"
                   moduleName = "TownieSwift"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/colinfyock/Documents/TownieSwift/TownieSwift/ContentView.swift"
+                  urlString = "file:///Users/colinfyock/Documents/TownieSwift/TownieSwift/FullMap.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "84">
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "595">
                </Location>
                <Location
-                  uuid = "FDC9E3D3-2A62-4BA3-8B3B-F4D6E9B14F7C - 6e29acfa27160a18"
+                  uuid = "485004D2-AE14-4661-90AD-0FFFDDE22ECA - 1a41271599327655"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TownieSwift.mapDisplay.locationManager(_: __C.CLLocationManager, didFailWithError: Swift.Error, didChangeAuthorization: __C.CLAuthorizationStatus) -&gt; ()"
+                  symbolName = "TownieSwift.LocationTrackingViewControl.askForLocation() -&gt; ()"
                   moduleName = "TownieSwift"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/colinfyock/Documents/TownieSwift/TownieSwift/ContentView.swift"
+                  urlString = "file:///Users/colinfyock/Documents/TownieSwift/TownieSwift/FullMap.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "109">
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "485004D2-AE14-4661-90AD-0FFFDDE22ECA - 1a412715993277d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TownieSwift.LocationTrackingViewControl.askForLocation() -&gt; ()"
+                  moduleName = "TownieSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/colinfyock/Documents/TownieSwift/TownieSwift/FullMap.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "116">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -55,33 +86,111 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "12C8F13F-0F4D-4579-9348-EC6E9BE049A1"
+            uuid = "048DB556-9D18-4A84-9969-B1CBCAD462F9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TownieSwift/ContentView.swift"
+            filePath = "TownieSwift/FullMap.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "checkLocationServices()"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "locationManagerDidChangeAuthorization(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5719B722-3BC2-4A78-A516-6DB62C0FB8CB"
+            uuid = "BC1E9D7D-A495-4AFB-80D4-06D643F85E1B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TownieSwift/ContentView.swift"
+            filePath = "TownieSwift/FullMap.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "checkLocationServices()"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "LocationTrackingViewControl"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "785EEE59-B11C-45FA-818E-90CB542D911A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TownieSwift/FullMap.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "785EEE59-B11C-45FA-818E-90CB542D911A - b58d29658af9ea9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;__C.CLPlacemark&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TownieSwift.LocationTrackingViewControl.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
+                  moduleName = "TownieSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/colinfyock/Documents/TownieSwift/TownieSwift/FullMap.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "146">
+               </Location>
+               <Location
+                  uuid = "785EEE59-B11C-45FA-818E-90CB542D911A - b58d29658af9ea9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;__C.CLPlacemark&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TownieSwift.LocationTrackingViewControl.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
+                  moduleName = "TownieSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/colinfyock/Documents/TownieSwift/TownieSwift/FullMap.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "629">
+               </Location>
+               <Location
+                  uuid = "785EEE59-B11C-45FA-818E-90CB542D911A - b58d29658af9e0e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;__C.CLPlacemark&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TownieSwift.LocationTrackingViewControl.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
+                  moduleName = "TownieSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/colinfyock/Documents/TownieSwift/TownieSwift/FullMap.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "146">
+               </Location>
+               <Location
+                  uuid = "785EEE59-B11C-45FA-818E-90CB542D911A - b58d29658af9e0e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;__C.CLPlacemark&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TownieSwift.LocationTrackingViewControl.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
+                  moduleName = "TownieSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/colinfyock/Documents/TownieSwift/TownieSwift/FullMap.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "629">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

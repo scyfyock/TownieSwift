@@ -7,50 +7,50 @@
 
 import SwiftUI
 import MapKit
+import CoreLocation
 
-struct initMap: View {
-    @State private var userTrackingMode: MapUserTrackingMode = .follow
-    @State private var region = MKCoordinateRegion(
-            center: CLLocationCoordinate2D(
-                latitude: 25.7617,
-                longitude: 80.1918
-            ),
-            span: MKCoordinateSpan(
-                latitudeDelta: 10,
-                longitudeDelta: 10
-            )
-        )
-    
-    var body: some View {
-        Map(
-            coordinateRegion: $region,
-            interactionModes: MapInteractionModes.all,
-            showsUserLocation: true,
-            userTrackingMode: $userTrackingMode
-        )
+extension CLLocation {
+    func geocode(completion: @escaping (_ placemark: [CLPlacemark]?, _ error: Error?) -> Void) {
+        CLGeocoder().reverseGeocodeLocation(self, completionHandler: completion)
     }
 }
 
-final class mapDisplay: NSObject, ObservableObject, CLLocationManagerDelegate {
+
+class LocationTrackingViewController: UIViewController, CLLocationManagerDelegate {
+    var locationManager: CLLocationManager?
     
-    var locationMan: CLLocationManager?
-    
-    func checkLocationServices() {
-        if CLLocationManager.locationServicesEnabled() {
-            locationMan = CLLocationManager()
-            locationMan!.delegate = self
-        }
-        else {
-            print("Incorrect")
-        }
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        locationManager = CLLocationManager()
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        
+        locationManager?.requestAlwaysAuthorization()
     }
     
-    private func askForLocation() {
-        guard let locationMan = locationMan else {
-            return
+    final class mapDisplay: NSObject, ObservableObject, CLLocationManagerDelegate {
+        var locationMan: CLLocationManager?
+        var geoCoder = CLGeocoder()
+
+        func checkLocationServices() {
+            if CLLocationManager.locationServicesEnabled() {
+                locationMan = CLLocationManager()
+                locationMan!.delegate = self
+                
+            }
+            else {
+                print("Incorrect")
+            }
         }
+
         
-        switch locationMan.authorizationStatus {
+        private func askForLocation() {
+            guard let locationMan = locationMan else {
+                return
+            }
+            
+            switch locationMan.authorizationStatus {
             case .notDetermined:
                 locationMan.requestWhenInUseAuthorization()
             case .restricted:
@@ -61,23 +61,41 @@ final class mapDisplay: NSObject, ObservableObject, CLLocationManagerDelegate {
                 break
             @unknown default:
                 break
+            }
         }
-    }
-    
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        askForLocation()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error, didChangeAuthorization status: CLAuthorizationStatus) {
-        locationMan?.requestAlwaysAuthorization()
+
+        func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+            askForLocation()
+        }
+        
+        func locationManager(_ manager: CLLocationManager, didFailWithError error: Error, didChangeAuthorization status: CLAuthorizationStatus) {
+            
+            locationMan?.requestAlwaysAuthorization()
+        }
+        
+        
+        
     }
 }
+
+
 
 struct Home: View {
     @State var switchButton = false
     @State var buttonText = "Start"
-    @State private var region = MKCoordinateRegion()
-    @State private var viewModel = mapDisplay()
+    @State private var region = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(
+            latitude: 25.7617,
+            longitude: 80.1918
+        ),
+        span: MKCoordinateSpan(
+            latitudeDelta: 10,
+            longitudeDelta: 10
+        )
+    )
+    let view = LocationTrackingViewController.mapDisplay()
+    
+    
     
     
     func switcher() {
@@ -85,6 +103,8 @@ struct Home: View {
     }
     
     var body: some View {
+
+        
         NavigationStack {
             VStack {
                 HStack {
@@ -95,10 +115,10 @@ struct Home: View {
                         .font(.title)
                     Text("Townie+")
                         .font(.title)
-                        
-
+                    
+                    
                     Spacer()
-
+                    
                     Button(self.buttonText) {
                         if(!switchButton) {
                             self.buttonText = "End"
@@ -154,17 +174,21 @@ struct Home: View {
                             .padding(.top, 5.0)
                             .padding([.leading, .trailing], 50.0)
                     }
+                    
                     Divider()
                     
                     if(!switchButton) {
-                        FullMap()
-                            
+                        Map(coordinateRegion: $region, interactionModes: [])
+                            .edgesIgnoringSafeArea(.all)
                     }
                     else {
-                        
-                        
+                        Map(coordinateRegion: $region, interactionModes: [], showsUserLocation: true, userTrackingMode: .constant(.follow))
+                            .edgesIgnoringSafeArea(.all)
+                            .onAppear() {
+                                view.checkLocationServices()
+                            }
                     }
-
+                    
                     Spacer()
                     Divider()
                     Spacer()
@@ -189,3 +213,4 @@ struct ContentView_Previews: PreviewProvider {
         Home()
     }
 }
+

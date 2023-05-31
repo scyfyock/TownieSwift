@@ -9,21 +9,29 @@ import SwiftUI
 import CoreLocation
 import MapKit
 
-class LocationTrackingViewControl: NSObject, ObservableObject, CLLocationManagerDelegate {
+class LocationTracker : NSObject, CLLocationManagerDelegate {
     var locationManager: CLLocationManager!
-    
+
     override init() {
         super.init()
         locationManager = CLLocationManager()
-        locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
+    }
+}
 
-    }
+class LocationTrackingViewControl: UIViewController, ObservableObject, CLLocationManagerDelegate {
+    var locationManager: CLLocationManager?
     
-    public func startTracking() {
-        self.locationManager.startUpdatingLocation()
-    }
+//    func checkLocationServices() {
+//        if CLLocationManager.locationServicesEnabled() {
+//            locationManager = CLLocationManager()
+//            locationManager!.delegate = self
+//        }
+//        else {
+//            print("Incorrect")
+//        }
+//    }
 
     private func askForLocation() {
         guard let locationManager else {
@@ -32,8 +40,7 @@ class LocationTrackingViewControl: NSObject, ObservableObject, CLLocationManager
         
         switch locationManager.authorizationStatus {
             case .notDetermined:
-                locationManager.requestAlwaysAuthorization()
-                
+                locationManager.requestWhenInUseAuthorization()
             case .restricted:
                 print("Restricted")
             case .denied:
@@ -46,17 +53,6 @@ class LocationTrackingViewControl: NSObject, ObservableObject, CLLocationManager
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        CLGeocoder().reverseGeocodeLocation(locations[0]) { placemarks, error in
-            if let error { print("This is an error: \(error)")}
-            else if let placemarks { print(placemarks.first)}
-           
-
-        }
-        
-        
-    }
-    
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         askForLocation()
     }
@@ -66,14 +62,14 @@ class LocationTrackingViewControl: NSObject, ObservableObject, CLLocationManager
     }
     
     
-//    override func viewDidLoad() {
-//
-//        super.viewDidLoad()
-//        locationManager = CLLocationManager()
-//        locationManager?.delegate = self
-//
-//        locationManager?.requestAlwaysAuthorization()
-//    }
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        
+        locationManager?.requestAlwaysAuthorization()
+    }
     
 //    final class mapDisplay: NSObject, ObservableObject, CLLocationManagerDelegate {
 //
@@ -135,14 +131,13 @@ struct FullMap: View {
             )
         )
     
-    let map = LocationTrackingViewControl()
+    let map = LocationTracker()
     
-     
     var body: some View {
         Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.follow))
             .edgesIgnoringSafeArea(.all)
             .onAppear() {
-                map.startTracking()
+//                map.checkLocationServices()
             }
     }
 }
