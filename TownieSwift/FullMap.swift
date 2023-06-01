@@ -11,6 +11,9 @@ import MapKit
 
 class LocationTrackingViewControl: NSObject, ObservableObject, CLLocationManagerDelegate {
     var locationManager: CLLocationManager!
+    var previousTime = -10
+    
+    
     
     override init() {
         super.init()
@@ -47,14 +50,27 @@ class LocationTrackingViewControl: NSObject, ObservableObject, CLLocationManager
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        CLGeocoder().reverseGeocodeLocation(locations[0]) { placemarks, error in
-            if let error { print("This is an error: \(error)")}
-            else if let placemarks { print(placemarks.first)}
-           
-
+        let date = Date()
+        let time = Calendar.current
+        let seconds = time.component(.second, from: date)
+        
+        print(seconds)
+        print(previousTime)
+        
+        if(seconds > previousTime + 2) {
+            CLGeocoder().reverseGeocodeLocation(locations[0]) { placemarks, error in
+                if let error { print("This is an error: \(error)")}
+                else if let placemarks {
+                    print(placemarks.first)
+                    self.previousTime = seconds
+                    if(self.previousTime + 2 >= 60) { self.previousTime = self.previousTime - 60 }
+                }
+//                check time have an if at the beginning checking if it has been 5 seconds since the last time this function was called, if it is then do not call the function, break or something
+            }
         }
-        
-        
+        else {
+            return
+        }
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
