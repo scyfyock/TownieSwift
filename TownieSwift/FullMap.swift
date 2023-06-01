@@ -12,22 +12,25 @@ import MapKit
 class LocationTrackingViewControl: NSObject, ObservableObject, CLLocationManagerDelegate {
     var locationManager: CLLocationManager!
     var previousTime = -10
-    
-    
-    
+//    var locationDetails: [[String]] = [[]]
+    var placesTraveled: [String] = []
+
     override init() {
         super.init()
         locationManager = CLLocationManager()
-        locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
-
     }
     
     public func startTracking() {
         self.locationManager.startUpdatingLocation()
     }
 
+    public func stopTracking() {
+        self.locationManager.stopUpdatingLocation()
+    }
+    
     private func askForLocation() {
         guard let locationManager else {
             return
@@ -54,18 +57,20 @@ class LocationTrackingViewControl: NSObject, ObservableObject, CLLocationManager
         let time = Calendar.current
         let seconds = time.component(.second, from: date)
         
-        print(seconds)
-        print(previousTime)
-        
         if(seconds > previousTime + 2) {
             CLGeocoder().reverseGeocodeLocation(locations[0]) { placemarks, error in
                 if let error { print("This is an error: \(error)")}
                 else if let placemarks {
-                    print(placemarks.first)
+                    if(!self.placesTraveled.contains(placemarks.first?.locality ?? "")) {
+                        self.placesTraveled.append(placemarks.first?.locality ?? "")
+                    }
+//                    if(!self.locationDetails.contains(placemarks.first?.thoroughfare ?? "")) {
+//                        self.locationDetails.append(contentsOf: [placemarks.first?.thoroughfare ?? "", placemarks.first?.locality ?? "", placemarks.first?.postalCode ?? "", placemarks.first?.administrativeArea ?? ""])
+//                    }
                     self.previousTime = seconds
-                    if(self.previousTime + 2 >= 60) { self.previousTime = self.previousTime - 60 }
+                    if(self.previousTime + 3 >= 60) { self.previousTime = self.previousTime - 60 }
+                    print(self.placesTraveled)
                 }
-//                check time have an if at the beginning checking if it has been 5 seconds since the last time this function was called, if it is then do not call the function, break or something
             }
         }
         else {
@@ -80,60 +85,6 @@ class LocationTrackingViewControl: NSObject, ObservableObject, CLLocationManager
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error, didChangeAuthorization status: CLAuthorizationStatus) {
         locationManager?.requestAlwaysAuthorization()
     }
-    
-    
-//    override func viewDidLoad() {
-//
-//        super.viewDidLoad()
-//        locationManager = CLLocationManager()
-//        locationManager?.delegate = self
-//
-//        locationManager?.requestAlwaysAuthorization()
-//    }
-    
-//    final class mapDisplay: NSObject, ObservableObject, CLLocationManagerDelegate {
-//
-//        var locationMan: CLLocationManager?
-//
-//        func checkLocationServices() {
-//            if CLLocationManager.locationServicesEnabled() {
-//                locationMan = CLLocationManager()
-//                locationMan!.delegate = self
-//            }
-//            else {
-//                print("Incorrect")
-//            }
-//        }
-//
-//        private func askForLocation() {
-//            guard let locationMan else {
-//                return
-//            }
-//
-//            switch locationMan.authorizationStatus {
-//                case .notDetermined:
-//                    locationMan.requestWhenInUseAuthorization()
-//                case .restricted:
-//                    print("Restricted")
-//                case .denied:
-//                    print("Denied")
-//                case .authorizedAlways, .authorizedWhenInUse:
-//                    break
-//                @unknown default:
-//                add print here
-//                    break
-//            }
-//        }
-//
-//        func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-//            askForLocation()
-//        }
-//
-//        func locationManager(_ manager: CLLocationManager, didFailWithError error: Error, didChangeAuthorization status: CLAuthorizationStatus) {
-//            locationMan?.requestAlwaysAuthorization()
-//        }
-//    }
-    
 
 }
 
