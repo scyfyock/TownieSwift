@@ -8,77 +8,8 @@
 import SwiftUI
 import MapKit
 import CoreLocation
-
-extension CLLocation {
-    func geocode(completion: @escaping (_ placemark: [CLPlacemark]?, _ error: Error?) -> Void) {
-        CLGeocoder().reverseGeocodeLocation(self, completionHandler: completion)
-    }
-}
-
-
-class LocationTrackingViewController: UIViewController, CLLocationManagerDelegate {
-    var locationManager: CLLocationManager?
-    
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        locationManager = CLLocationManager()
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
-        
-        locationManager?.requestAlwaysAuthorization()
-    }
-    
-    final class mapDisplay: NSObject, ObservableObject, CLLocationManagerDelegate {
-        var locationMan: CLLocationManager?
-        var geoCoder = CLGeocoder()
-
-        func checkLocationServices() {
-            if CLLocationManager.locationServicesEnabled() {
-                locationMan = CLLocationManager()
-                locationMan!.delegate = self
-                
-            }
-            else {
-                print("Incorrect")
-            }
-        }
-
-        
-        private func askForLocation() {
-            guard let locationMan = locationMan else {
-                return
-            }
-            
-            switch locationMan.authorizationStatus {
-            case .notDetermined:
-                locationMan.requestWhenInUseAuthorization()
-            case .restricted:
-                print("Restricted")
-            case .denied:
-                print("Denied")
-            case .authorizedAlways, .authorizedWhenInUse:
-                break
-            @unknown default:
-                break
-            }
-        }
-
-        func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-            askForLocation()
-        }
-        
-        func locationManager(_ manager: CLLocationManager, didFailWithError error: Error, didChangeAuthorization status: CLAuthorizationStatus) {
-            
-            locationMan?.requestAlwaysAuthorization()
-        }
-        
-        
-        
-    }
-}
-
-
+import Foundation
+import AVFoundation
 
 struct Home: View {
     @State var switchButton = false
@@ -93,8 +24,32 @@ struct Home: View {
             longitudeDelta: 10
         )
     )
-    let view = LocationTrackingViewController.mapDisplay()
     
+    let map = LocationTrackingViewControl.shared
+    
+
+    func speak(speech: String) {
+        // Create an utterance.
+        let utterance = AVSpeechUtterance(string: speech)
+
+        // Configure the utterance.
+        utterance.rate = 0.57
+        utterance.pitchMultiplier = 0.8
+        utterance.postUtteranceDelay = 0.2
+        utterance.volume = 0.8
+
+        // Retrieve the British English voice.
+        let voice = AVSpeechSynthesisVoice(language: "en-US")
+
+        // Assign the voice to the utterance.
+        utterance.voice = voice
+        
+        // Create a speech synthesizer.
+        let synthesizer = AVSpeechSynthesizer()
+
+        // Tell the synthesizer to speak the utterance.
+        synthesizer.speak(utterance)
+    }
     
     
     
@@ -103,8 +58,6 @@ struct Home: View {
     }
     
     var body: some View {
-
-        
         NavigationStack {
             VStack {
                 HStack {
@@ -158,34 +111,37 @@ struct Home: View {
                             .padding(.vertical, 5.0)
                             .frame(maxWidth: .infinity, alignment: .center)
                         
-                        Text("Road:")
+                        Text("Road: \(map.getCurrentLocation()[0])")
                             .padding(.top, 5.0)
                             .padding([.leading, .trailing], 50.0)
                         
-                        Text("City:")
+                        Text("City: \(map.getCurrentLocation()[1])")
                             .padding(.top, 5.0)
                             .padding([.leading, .trailing], 50.0)
                         
-                        Text("County:")
+                        Text("County: \(map.getCurrentLocation()[2])")
                             .padding(.top, 5.0)
                             .padding([.leading, .trailing], 50.0)
                         
-                        Text("State:")
+                        Text("State: \(map.getCurrentLocation()[3])")
                             .padding(.top, 5.0)
                             .padding([.leading, .trailing], 50.0)
                     }
                     
                     Divider()
-                    
-                    if(!switchButton) {
-                        Map(coordinateRegion: $region, interactionModes: [])
-                            .edgesIgnoringSafeArea(.all)
-                    }
-                    else {
+
+                    if(switchButton) {
                         Map(coordinateRegion: $region, interactionModes: [], showsUserLocation: true, userTrackingMode: .constant(.follow))
                             .edgesIgnoringSafeArea(.all)
                             .onAppear() {
-                                view.checkLocationServices()
+                                map.startTracking()
+                            }
+                    }
+                    else {
+                        Map(coordinateRegion: $region, interactionModes: [], showsUserLocation: false)
+                            .edgesIgnoringSafeArea(.all)
+                            .onAppear() {
+                                map.stopTracking()
                             }
                     }
                     
@@ -193,9 +149,8 @@ struct Home: View {
                     Divider()
                     Spacer()
                     
-                    
                     VStack(alignment: .center) {
-                        NavigationLink(destination: FullMap()) {
+                        NavigationLink(destination: Places()) {
                             Text("Places Traveled")
                                 .frame(maxWidth: .infinity, alignment: .center)
                         }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0401CE812A12C5E300864049 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401CE802A12C5E300864049 /* Places.swift */; };
+		0428C1742A29139B0071E135 /* locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428C1732A29139B0071E135 /* locator.swift */; };
 		0453432C2A12882600C4D5F9 /* TownieSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453432B2A12882600C4D5F9 /* TownieSwiftApp.swift */; };
 		0453432E2A12882600C4D5F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453432D2A12882600C4D5F9 /* ContentView.swift */; };
 		045343302A12882700C4D5F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0453432F2A12882700C4D5F9 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		0401CE802A12C5E300864049 /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
+		0428C1732A29139B0071E135 /* locator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locator.swift; sourceTree = "<group>"; };
 		045343282A12882600C4D5F9 /* TownieSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TownieSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0453432B2A12882600C4D5F9 /* TownieSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownieSwiftApp.swift; sourceTree = "<group>"; };
 		0453432D2A12882600C4D5F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; wrapsLines = 1; };
@@ -102,6 +104,7 @@
 				04FED2032A1BB92F00AAFE84 /* Info.plist */,
 				0453432B2A12882600C4D5F9 /* TownieSwiftApp.swift */,
 				0453432D2A12882600C4D5F9 /* ContentView.swift */,
+				0428C1732A29139B0071E135 /* locator.swift */,
 				0401CE802A12C5E300864049 /* Places.swift */,
 				04FED2012A1BACFF00AAFE84 /* FullMap.swift */,
 				0453432F2A12882700C4D5F9 /* Assets.xcassets */,
@@ -268,6 +271,7 @@
 				0453432E2A12882600C4D5F9 /* ContentView.swift in Sources */,
 				04FED2022A1BACFF00AAFE84 /* FullMap.swift in Sources */,
 				0453432C2A12882600C4D5F9 /* TownieSwiftApp.swift in Sources */,
+				0428C1742A29139B0071E135 /* locator.swift in Sources */,
 				0401CE812A12C5E300864049 /* Places.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
