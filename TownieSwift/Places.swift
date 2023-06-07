@@ -10,20 +10,30 @@ import SwiftUI
 struct Places: View {
     
     @ObservedObject var map = LocationTrackingViewControl.shared
-
+    
     var body: some View {
         
         NavigationStack {
+            Spacer()
+                .frame(height: 10)
+            Divider()
+            Spacer()
+                .frame(height: 10)
             
             VStack(
                 alignment: .leading,
                 spacing: 10
             ) {
+                
                 Text("\(map.getPlacesTraveled())")
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .multilineTextAlignment(.center)
+                
+                Spacer()
             }
-             
+            
         }
-        .navigationTitle("Places Traveled To")
+        .navigationTitle("Towns Visited")
     }
 }
 

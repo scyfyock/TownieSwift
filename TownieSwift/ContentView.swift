@@ -27,32 +27,6 @@ struct Home: View {
     
     let map = LocationTrackingViewControl.shared
     
-
-    func speak(speech: String) {
-        // Create an utterance.
-        let utterance = AVSpeechUtterance(string: speech)
-
-        // Configure the utterance.
-        utterance.rate = 0.57
-        utterance.pitchMultiplier = 0.8
-        utterance.postUtteranceDelay = 0.2
-        utterance.volume = 0.8
-
-        // Retrieve the British English voice.
-        let voice = AVSpeechSynthesisVoice(language: "en-US")
-
-        // Assign the voice to the utterance.
-        utterance.voice = voice
-        
-        // Create a speech synthesizer.
-        let synthesizer = AVSpeechSynthesizer()
-
-        // Tell the synthesizer to speak the utterance.
-        synthesizer.speak(utterance)
-    }
-    
-    
-    
     func switcher() {
         switchButton = !switchButton
     }
@@ -137,6 +111,7 @@ struct Home: View {
                                 map.startTracking()
                             }
                     }
+                    
                     else {
                         Map(coordinateRegion: $region, interactionModes: [], showsUserLocation: false)
                             .edgesIgnoringSafeArea(.all)
@@ -151,7 +126,7 @@ struct Home: View {
                     
                     VStack(alignment: .center) {
                         NavigationLink(destination: Places()) {
-                            Text("Places Traveled")
+                            Text("Towns Visited")
                                 .frame(maxWidth: .infinity, alignment: .center)
                         }
                     }
