@@ -24,15 +24,14 @@ struct Places: View {
                 alignment: .leading,
                 spacing: 10
             ) {
-                
-                Text("\(map.getPlacesTraveled())")
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .multilineTextAlignment(.center)
-                
-                Spacer()
+                ScrollView {
+                    Text("\(map.getPlacesTraveled())")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .multilineTextAlignment(.center)
+                }
             }
-            
         }
+        Spacer()
         .navigationTitle("Towns Visited")
     }
 }

@@ -24,7 +24,7 @@ public class LocationTrackingViewControl: NSObject, ObservableObject,
     override init() {
         self.placesTraveled = []
         self.currentLocation = ["", "", "", ""]
-        self.hasGivenLocation = false
+        self.hasGivenLocation = true
         super.init()
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -32,14 +32,9 @@ public class LocationTrackingViewControl: NSObject, ObservableObject,
         locationManager.requestWhenInUseAuthorization()
     }
     
-    public func noLocationError() {
-//        let alert = UIAlertController(title: "My Alert", message: "This is an alert.", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-//        NSLog("The \"OK\" alert occured.")
-//        }))
-//        self.present(alert, animated: true, completion: nil)
-
-
+    public func deniedPermission() -> Binding<Bool> {
+        let binding = Binding<Bool>(get: { !self.hasGivenLocation }, set: { _ in })
+        return binding
     }
     
     public func getPlacesTraveled() -> String {
@@ -67,14 +62,15 @@ public class LocationTrackingViewControl: NSObject, ObservableObject,
         switch locationManager.authorizationStatus {
         case .notDetermined:
             locationManager.requestAlwaysAuthorization()
-            
         case .restricted:
             print("Restricted")
+            hasGivenLocation = false
         case .denied:
             print("Denied")
             hasGivenLocation = false
         case .authorizedAlways, .authorizedWhenInUse:
             locationManager.requestAlwaysAuthorization()
+            hasGivenLocation = true
             break
         @unknown default:
             print("Unknown authorizationStatus \(locationManager.authorizationStatus)")
@@ -115,9 +111,10 @@ public class LocationTrackingViewControl: NSObject, ObservableObject,
                     
                     self.previousTime = seconds
                     if(self.previousTime + 3 >= 60) { self.previousTime = self.previousTime - 60 }
-                    print(placemarks.first?.locality ?? "")
-                    print(self.currentLocation)
-                    print(self.placesTraveled)
+//                    print(self.hasGivenLocation)
+//                    print(placemarks.first?.locality ?? "")
+//                    print(self.currentLocation)
+//                    print(self.placesTraveled)
                 }
             }
         }

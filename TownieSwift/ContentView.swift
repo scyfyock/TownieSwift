@@ -27,6 +27,7 @@ struct Home: View {
     
     let map = LocationTrackingViewControl.shared
     
+    let alertTitle: String = "No Location Found"
     
     
     func switcher() {
@@ -111,9 +112,16 @@ struct Home: View {
                             .edgesIgnoringSafeArea(.all)
                             .onAppear() {
                                 map.startTracking()
-                                if(map.hasGivenLocation == false) {
-                                    //                                        dialogMessage.addAction(ok)
+                            }
+                            .alert(
+                                alertTitle,
+                                isPresented: map.deniedPermission()
+                            ) {
+                                Button("OK") {
+                                    // Handle the acknowledgement.
                                 }
+                            } message: {
+                                Text("Townie will be unable to display a map or show the towns that you have visited without your location. Please go to Settings > Townie > Location and Select 'Always'")
                             }
                     }
                     
