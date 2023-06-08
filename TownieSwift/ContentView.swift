@@ -27,6 +27,8 @@ struct Home: View {
     
     let map = LocationTrackingViewControl.shared
     
+    
+    
     func switcher() {
         switchButton = !switchButton
     }
@@ -103,12 +105,15 @@ struct Home: View {
                     }
                     
                     Divider()
-
+                    
                     if(switchButton) {
                         Map(coordinateRegion: $region, interactionModes: [], showsUserLocation: true, userTrackingMode: .constant(.follow))
                             .edgesIgnoringSafeArea(.all)
                             .onAppear() {
                                 map.startTracking()
+                                if(map.hasGivenLocation == false) {
+                                    //                                        dialogMessage.addAction(ok)
+                                }
                             }
                     }
                     

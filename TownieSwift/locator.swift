@@ -15,6 +15,7 @@ public class LocationTrackingViewControl: NSObject, ObservableObject,
     
     static let shared = LocationTrackingViewControl()
     
+    var hasGivenLocation: Bool
     var locationManager: CLLocationManager!
     var previousTime = -10
     @Published var placesTraveled: [String]
@@ -23,11 +24,22 @@ public class LocationTrackingViewControl: NSObject, ObservableObject,
     override init() {
         self.placesTraveled = []
         self.currentLocation = ["", "", "", ""]
+        self.hasGivenLocation = false
         super.init()
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+    }
+    
+    public func noLocationError() {
+//        let alert = UIAlertController(title: "My Alert", message: "This is an alert.", preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+//        NSLog("The \"OK\" alert occured.")
+//        }))
+//        self.present(alert, animated: true, completion: nil)
+
+
     }
     
     public func getPlacesTraveled() -> String {
@@ -60,7 +72,9 @@ public class LocationTrackingViewControl: NSObject, ObservableObject,
             print("Restricted")
         case .denied:
             print("Denied")
+            hasGivenLocation = false
         case .authorizedAlways, .authorizedWhenInUse:
+            locationManager.requestAlwaysAuthorization()
             break
         @unknown default:
             print("Unknown authorizationStatus \(locationManager.authorizationStatus)")
@@ -91,6 +105,7 @@ public class LocationTrackingViewControl: NSObject, ObservableObject,
                                                 placemarks.first?.postalCode ?? "",
                                                 placemarks.first?.administrativeArea ?? ""]
                     }
+                    
                     
                     if(!self.placesTraveled.contains(placemarks.first?.locality ?? "")) {
                         self.placesTraveled.append(placemarks.first?.locality ?? "")

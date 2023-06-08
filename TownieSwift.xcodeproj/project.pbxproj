@@ -439,8 +439,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TownieSwift/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "REQUIRES LOCATION";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "REQUIRES LOCATION";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "If you would like the application to keep track of towns visisted when not in the app, then select Change to Always Allow. The location will only be tracked when the Start button is pushed.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We require location access to show the user's location on a map and to display the current town they are in. In order for the application to work when in the background, select Allow While Using App, and then Change to Always Allow.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -470,8 +470,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TownieSwift/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "REQUIRES LOCATION";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "REQUIRES LOCATION";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "If you would like the application to keep track of towns visisted when not in the app, then select Change to Always Allow. The location will only be tracked when the Start button is pushed.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We require location access to show the user's location on a map and to display the current town they are in. In order for the application to work when in the background, select Allow While Using App, and then Change to Always Allow.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
