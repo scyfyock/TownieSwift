@@ -15,19 +15,24 @@ public class speakLocation: NSObject {
     let synthesizer = AVSpeechSynthesizer()
     
     public func speak(speech: String) {
+        let audioSession = AVAudioSession.sharedInstance()
+        try? audioSession.setCategory(AVAudioSession.Category.playback, options: [.duckOthers, .interruptSpokenAudioAndMixWithOthers])
+
         // Create an utterance.
         let voice = AVSpeechSynthesisVoice(language: "en-US")
-
+        
         let utterance = AVSpeechUtterance(string: speech)
-
-        // Retrieve the British English voice.
-
+        
         // Assign the voice to the utterance.
         utterance.voice = voice
         
-
         // Tell the synthesizer to speak the utterance.
         synthesizer.speak(utterance)
     }
+    
+    
+    
+    
+    
 }
 

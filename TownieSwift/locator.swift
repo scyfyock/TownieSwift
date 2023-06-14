@@ -113,7 +113,7 @@ public class LocationTrackingViewControl: NSObject, ObservableObject,
                     if(self.previousTime + 3 >= 60) { self.previousTime = self.previousTime - 60 }
 //                    print(self.hasGivenLocation)
 //                    print(placemarks.first?.locality ?? "")
-//                    print(self.currentLocation)
+                    print(self.currentLocation)
 //                    print(self.placesTraveled)
                 }
             }

@@ -25,7 +25,7 @@ struct Home: View {
         )
     )
     
-    let map = LocationTrackingViewControl.shared
+    @ObservedObject var map = LocationTrackingViewControl.shared
     
     let alertTitle: String = "No Location Found"
     
