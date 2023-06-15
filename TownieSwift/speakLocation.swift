@@ -8,13 +8,12 @@
 import Foundation
 import AVFoundation
 
-public class speakLocation: NSObject {
-    static let speaker = speakLocation()
+public class SpeakLocation: NSObject {
+    static let speaker = SpeakLocation()
     var prev = ""
     var utterance = AVSpeechUtterance()
     var hasAnnouncedFirstLocation = false
 
-    
     // Create a speech synthesizer.
     let synthesizer = AVSpeechSynthesizer()
     

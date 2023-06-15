@@ -47,7 +47,7 @@ struct Home: View {
     @ObservedObject var map = locator.shared
 
     let intro = "You are now entering "
-    let speech = speakLocation.speaker
+    let speech = SpeakLocation.speaker
     @State var currentCity = ""
     
     
@@ -127,10 +127,7 @@ struct Home: View {
                             .padding(.top, 5.0)
                             .padding([.leading, .trailing], 50.0)
                             .onChange(of: map.currentLocation) { _ in
-                                if(map.getCurrentLocation()[1] != "" && currentCity != map.getCurrentLocation()[1]) {
-                                    speech.speak(speech: map.getCurrentLocation()[1])
-                                    currentCity = map.getCurrentLocation()[1]
-                                }
+                                speech.speak(speech: map.getCurrentLocation()[1])
                             }
                         //                            .onAppear() {
                         //                                print(map.getCurrentLocation())
