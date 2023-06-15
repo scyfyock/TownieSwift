@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Places: View {
     
-    @ObservedObject var map = LocationTrackingViewControl.shared
+    @ObservedObject var map = locator.shared
     
     var body: some View {
         

@@ -10,6 +10,7 @@ import AVFoundation
 
 public class speakLocation: NSObject {
     static let speaker = speakLocation()
+    var prev = ""
     
     // Create a speech synthesizer.
     let synthesizer = AVSpeechSynthesizer()
@@ -20,19 +21,21 @@ public class speakLocation: NSObject {
 
         // Create an utterance.
         let voice = AVSpeechSynthesisVoice(language: "en-US")
-        
-        let utterance = AVSpeechUtterance(string: speech)
-        
+
+        let utterance = AVSpeechUtterance(string: "You are now entering " + speech)
+        print(prev)
+        print(speech)
+        print(utterance)
         // Assign the voice to the utterance.
         utterance.voice = voice
         
         // Tell the synthesizer to speak the utterance.
-        synthesizer.speak(utterance)
-    }
-    
-    
-    
-    
-    
-}
+        if(speech != prev) {
+            print("HERE SHOULD BE SPEAKING")
+            synthesizer.speak(utterance)
+            prev = speech
+        }
 
+
+    }
+}

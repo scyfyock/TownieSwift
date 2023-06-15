@@ -9,6 +9,8 @@ import SwiftUI
 import MapKit
 import CoreLocation
 import Foundation
+import AVFoundation
+
 
 extension String {
     static let startButtonTitle = "Start"
@@ -42,8 +44,12 @@ struct Home: View {
         )
     )
     
-    @ObservedObject var map = LocationTrackingViewControl.shared
-        
+    @ObservedObject var map = locator.shared
+
+    let intro = "You are now entering "
+    let speech = speakLocation.speaker
+    @State var currentCity = ""
+    
     
     func switcher() {
         locationTrackingIsOn = !locationTrackingIsOn
@@ -102,14 +108,16 @@ struct Home: View {
                             .font(.headline)
                             .padding(.vertical, 5.0)
                             .frame(maxWidth: .infinity, alignment: .center)
-                        
+
                         Text("Road: \(map.getCurrentLocation()[0])")
                             .padding(.top, 5.0)
                             .padding([.leading, .trailing], 50.0)
-                        
+
+
                         Text("City: \(map.getCurrentLocation()[1])")
                             .padding(.top, 5.0)
                             .padding([.leading, .trailing], 50.0)
+
                         
                         Text("County: \(map.getCurrentLocation()[2])")
                             .padding(.top, 5.0)
@@ -118,6 +126,34 @@ struct Home: View {
                         Text("State: \(map.getCurrentLocation()[3])")
                             .padding(.top, 5.0)
                             .padding([.leading, .trailing], 50.0)
+                            .onChange(of: map.currentLocation) { _ in
+                                if(map.getCurrentLocation()[1] != "" && currentCity != map.getCurrentLocation()[1]) {
+                                    speech.speak(speech: map.getCurrentLocation()[1])
+                                    currentCity = map.getCurrentLocation()[1]
+                                }
+                            }
+                        //                            .onAppear() {
+                        //                                print(map.getCurrentLocation())
+                        //                                if(map.getCurrentLocation()[1] != "") {
+                        //                                    speech.speak(speech: intro + map.getCurrentLocation()[1])
+                        //                                }
+                        //                            }
+                        //                            .task {
+                        //                                let curr = await map.getCurrentLocation()
+                        //                                if(curr[1] != "") {
+                        //                                    speech.speak(speech: intro + map.getCurrentLocation()[1])
+                        //                                }
+                        //                            }
+                        //                            .onReceive(map.$currentLocation, perform: { c in
+                        //                                if(map.getCurrentLocation()[1] != "" && map.getCurrentLocation()[1] != currentCity) {
+                        //                                    print("This is c")
+                        //                                    print(c)
+                        //                                    speech.speak(speech: intro + map.getCurrentLocation()[1])
+                        //                                    currentCity = map.getCurrentLocation()[1]
+                        //                                }
+                        //                            })
+
+
                     }
                     
                     Divider()
