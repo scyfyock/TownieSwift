@@ -20,6 +20,7 @@ public class SpeakLocation: NSObject {
     public func speak(speech: String) {
         let audioSession = AVAudioSession.sharedInstance()
         try? audioSession.setCategory(AVAudioSession.Category.playback, options: [.duckOthers, .interruptSpokenAudioAndMixWithOthers])
+
         let voice = AVSpeechSynthesisVoice(language: "en-US")
 
         if(hasAnnouncedFirstLocation == true) {
@@ -37,9 +38,17 @@ public class SpeakLocation: NSObject {
         if(speech != prev) {
             synthesizer.speak(utterance)
             prev = speech
+//            try? audioSession.setActive(false)
+
         }
 
     }
 
-    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        guard !synthesizer.isSpeaking else { return }
+
+        let audioSession = AVAudioSession.sharedInstance()
+
+        try? audioSession.setActive(false)
+    }
 }
