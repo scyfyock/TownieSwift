@@ -17,8 +17,6 @@
 		0453433D2A12882800C4D5F9 /* TownieSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453433C2A12882800C4D5F9 /* TownieSwiftTests.swift */; };
 		045343472A12882800C4D5F9 /* TownieSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045343462A12882800C4D5F9 /* TownieSwiftUITests.swift */; };
 		045343492A12882800C4D5F9 /* TownieSwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045343482A12882800C4D5F9 /* TownieSwiftUITestsLaunchTests.swift */; };
-		04CB80502A321CC700CDCAF6 /* UIAlertControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB804F2A321CC700CDCAF6 /* UIAlertControl.swift */; };
-		04FED2022A1BACFF00AAFE84 /* FullMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FED2012A1BACFF00AAFE84 /* FullMap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +50,6 @@
 		045343422A12882800C4D5F9 /* TownieSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TownieSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		045343462A12882800C4D5F9 /* TownieSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownieSwiftUITests.swift; sourceTree = "<group>"; };
 		045343482A12882800C4D5F9 /* TownieSwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownieSwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		04CB804F2A321CC700CDCAF6 /* UIAlertControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControl.swift; sourceTree = "<group>"; };
-		04FED2012A1BACFF00AAFE84 /* FullMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullMap.swift; sourceTree = "<group>"; };
 		04FED2032A1BB92F00AAFE84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,9 +106,7 @@
 				0453432D2A12882600C4D5F9 /* ContentView.swift */,
 				0428C1752A2FA6530071E135 /* speakLocation.swift */,
 				0428C1732A29139B0071E135 /* locator.swift */,
-				04CB804F2A321CC700CDCAF6 /* UIAlertControl.swift */,
 				0401CE802A12C5E300864049 /* Places.swift */,
-				04FED2012A1BACFF00AAFE84 /* FullMap.swift */,
 				0453432F2A12882700C4D5F9 /* Assets.xcassets */,
 				045343312A12882700C4D5F9 /* Preview Content */,
 			);
@@ -275,9 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0453432E2A12882600C4D5F9 /* ContentView.swift in Sources */,
-				04FED2022A1BACFF00AAFE84 /* FullMap.swift in Sources */,
 				0453432C2A12882600C4D5F9 /* TownieSwiftApp.swift in Sources */,
-				04CB80502A321CC700CDCAF6 /* UIAlertControl.swift in Sources */,
 				0428C1742A29139B0071E135 /* locator.swift in Sources */,
 				0401CE812A12C5E300864049 /* Places.swift in Sources */,
 				0428C1762A2FA6530071E135 /* speakLocation.swift in Sources */,

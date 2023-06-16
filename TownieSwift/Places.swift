@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Places: View {
     
-    @ObservedObject var map = LocationTrackingViewControl.shared
+    @ObservedObject var map = locator.shared
     
     var body: some View {
         
@@ -25,7 +25,7 @@ struct Places: View {
                 spacing: 10
             ) {
                 ScrollView {
-                    Text("\(map.getPlacesTraveled())")
+                    Text("\(map.getPlacesTraveled().joined(separator: "\n"))")
                         .frame(maxWidth: .infinity, alignment: .center)
                         .multilineTextAlignment(.center)
                 }

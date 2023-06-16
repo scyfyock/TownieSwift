@@ -11,9 +11,28 @@ import CoreLocation
 import Foundation
 import AVFoundation
 
+
+extension String {
+    static let startButtonTitle = "Start"
+    static let stopButtonTitle = "End"
+    static let alertTitle: String = "No Location Found"
+    static let titleIcon = "house.lodge.circle"
+    static let appTitle = "Townie+"
+    static let intro1 = "Welcome to Townie+!"
+    static let intro2 = "This app tracks your current location and tells you what town you are in!"
+    static let intro3 = "Press Start to start the application. \nPress Stop to stop to see this menu again."
+    static let locationDetails = "Location Details:"
+    static let locationError = "Townie will be unable to display a map or show the towns that you have visited without your location. Please go to Settings > Townie > Location and Select 'Always'"
+    static let townsVisitedTitle = "Towns Visited"
+    
+}
+
+
 struct Home: View {
-    @State var switchButton = false
-    @State var buttonText = "Start"
+    @State var locationTrackingIsOn = false
+    @State var buttonText = String.startButtonTitle
+    
+    
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(
             latitude: 25.7617,
@@ -25,38 +44,40 @@ struct Home: View {
         )
     )
     
-    @ObservedObject var map = LocationTrackingViewControl.shared
-    
-    let alertTitle: String = "No Location Found"
+    @ObservedObject var map = locator.shared
+
+    let intro = "You are now entering "
+    let speech = SpeakLocation.speaker
+    @State var currentCity = ""
     
     
     func switcher() {
-        switchButton = !switchButton
+        locationTrackingIsOn = !locationTrackingIsOn
     }
     
     var body: some View {
         NavigationStack {
             VStack {
                 HStack {
-                    Image(systemName: "house.lodge.circle")
+                    Image(systemName: .titleIcon)
                         .padding([.top, .leading, .bottom], 10.0)
                         .imageScale(.large)
                         .foregroundColor(.accentColor)
                         .font(.title)
-                    Text("Townie+")
+                    Text(String.appTitle)
                         .font(.title)
                     
                     
                     Spacer()
                     
                     Button(self.buttonText) {
-                        if(!switchButton) {
-                            self.buttonText = "End"
-                            switchButton = !switchButton
+                        if(locationTrackingIsOn) {
+                            self.buttonText = .startButtonTitle
+                            locationTrackingIsOn = !locationTrackingIsOn
                         }
                         else {
-                            self.buttonText = "Start"
-                            switchButton = !switchButton
+                            self.buttonText = .stopButtonTitle
+                            locationTrackingIsOn = !locationTrackingIsOn
                         }
                     }
                     .padding()
@@ -67,34 +88,36 @@ struct Home: View {
                 Divider()
                 
                 VStack (alignment: .leading){
-                    if(!switchButton) {
-                        Text("Welcome to Townie+!")
+                    if(!locationTrackingIsOn) {
+                        Text(String.intro1)
                             .font(.headline)
                             .padding(.vertical, 5.0)
                             .frame(maxWidth: .infinity, alignment: .center)
                         
-                        Text("This app tracks your current location and tells you what town you are in!")
+                        Text(String.intro2)
                             .padding(.top, 5.0)
                             .padding([.leading, .trailing], 50.0)
                         
-                        Text("Press Start to start the application. \nPress Stop to stop to see this menu again. ")
+                        Text(String.intro3)
                             .padding(.top, 5.0)
                             .padding(.leading, 50.0)
                     }
                     
                     else {
-                        Text("Location Details:")
+                        Text(String.locationDetails)
                             .font(.headline)
                             .padding(.vertical, 5.0)
                             .frame(maxWidth: .infinity, alignment: .center)
-                        
+
                         Text("Road: \(map.getCurrentLocation()[0])")
                             .padding(.top, 5.0)
                             .padding([.leading, .trailing], 50.0)
-                        
+
+
                         Text("City: \(map.getCurrentLocation()[1])")
                             .padding(.top, 5.0)
                             .padding([.leading, .trailing], 50.0)
+
                         
                         Text("County: \(map.getCurrentLocation()[2])")
                             .padding(.top, 5.0)
@@ -103,25 +126,27 @@ struct Home: View {
                         Text("State: \(map.getCurrentLocation()[3])")
                             .padding(.top, 5.0)
                             .padding([.leading, .trailing], 50.0)
+                            .onChange(of: map.currentLocation) { _ in
+                                speech.speak(speech: map.getCurrentLocation()[1])
+                            }
                     }
                     
                     Divider()
                     
-                    if(switchButton) {
+                    if(locationTrackingIsOn) {
                         Map(coordinateRegion: $region, interactionModes: [], showsUserLocation: true, userTrackingMode: .constant(.follow))
                             .edgesIgnoringSafeArea(.all)
                             .onAppear() {
                                 map.startTracking()
                             }
                             .alert(
-                                alertTitle,
+                                String.alertTitle,
                                 isPresented: map.deniedPermission()
                             ) {
                                 Button("OK") {
-                                    // Handle the acknowledgement.
                                 }
                             } message: {
-                                Text("Townie will be unable to display a map or show the towns that you have visited without your location. Please go to Settings > Townie > Location and Select 'Always'")
+                                Text(String.locationError)
                             }
                     }
                     
@@ -139,7 +164,7 @@ struct Home: View {
                     
                     VStack(alignment: .center) {
                         NavigationLink(destination: Places()) {
-                            Text("Towns Visited")
+                            Text(String.townsVisitedTitle)
                                 .frame(maxWidth: .infinity, alignment: .center)
                         }
                     }

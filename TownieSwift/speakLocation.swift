@@ -8,9 +8,12 @@
 import Foundation
 import AVFoundation
 
-public class speakLocation: NSObject {
-    static let speaker = speakLocation()
-    
+public class SpeakLocation: NSObject {
+    static let speaker = SpeakLocation()
+    var prev = ""
+    var utterance = AVSpeechUtterance()
+    var hasAnnouncedFirstLocation = false
+
     // Create a speech synthesizer.
     let synthesizer = AVSpeechSynthesizer()
     
@@ -18,21 +21,32 @@ public class speakLocation: NSObject {
         let audioSession = AVAudioSession.sharedInstance()
         try? audioSession.setCategory(AVAudioSession.Category.playback, options: [.duckOthers, .interruptSpokenAudioAndMixWithOthers])
 
-        // Create an utterance.
         let voice = AVSpeechSynthesisVoice(language: "en-US")
-        
-        let utterance = AVSpeechUtterance(string: speech)
-        
+
+        if(hasAnnouncedFirstLocation == true) {
+            utterance = AVSpeechUtterance(string: "You are now entering " + speech)
+        }
+        else {
+            utterance = AVSpeechUtterance(string: "Currently in " + speech)
+            hasAnnouncedFirstLocation = true
+        }
+
         // Assign the voice to the utterance.
         utterance.voice = voice
-        
-        // Tell the synthesizer to speak the utterance.
-        synthesizer.speak(utterance)
-    }
-    
-    
-    
-    
-    
-}
 
+        // Tell the synthesizer to speak the utterance.
+        if(speech != prev) {
+            synthesizer.speak(utterance)
+            prev = speech
+        }
+
+    }
+
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        guard !synthesizer.isSpeaking else { return }
+
+        let audioSession = AVAudioSession.sharedInstance()
+
+        try? audioSession.setActive(false)
+    }
+}
