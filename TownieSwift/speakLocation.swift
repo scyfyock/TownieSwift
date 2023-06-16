@@ -38,8 +38,6 @@ public class SpeakLocation: NSObject {
         if(speech != prev) {
             synthesizer.speak(utterance)
             prev = speech
-//            try? audioSession.setActive(false)
-
         }
 
     }

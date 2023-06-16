@@ -129,28 +129,6 @@ struct Home: View {
                             .onChange(of: map.currentLocation) { _ in
                                 speech.speak(speech: map.getCurrentLocation()[1])
                             }
-                        //                            .onAppear() {
-                        //                                print(map.getCurrentLocation())
-                        //                                if(map.getCurrentLocation()[1] != "") {
-                        //                                    speech.speak(speech: intro + map.getCurrentLocation()[1])
-                        //                                }
-                        //                            }
-                        //                            .task {
-                        //                                let curr = await map.getCurrentLocation()
-                        //                                if(curr[1] != "") {
-                        //                                    speech.speak(speech: intro + map.getCurrentLocation()[1])
-                        //                                }
-                        //                            }
-                        //                            .onReceive(map.$currentLocation, perform: { c in
-                        //                                if(map.getCurrentLocation()[1] != "" && map.getCurrentLocation()[1] != currentCity) {
-                        //                                    print("This is c")
-                        //                                    print(c)
-                        //                                    speech.speak(speech: intro + map.getCurrentLocation()[1])
-                        //                                    currentCity = map.getCurrentLocation()[1]
-                        //                                }
-                        //                            })
-
-
                     }
                     
                     Divider()
@@ -166,7 +144,6 @@ struct Home: View {
                                 isPresented: map.deniedPermission()
                             ) {
                                 Button("OK") {
-                                    // Handle the acknowledgement.
                                 }
                             } message: {
                                 Text(String.locationError)
