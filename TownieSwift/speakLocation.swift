@@ -15,7 +15,7 @@ public class SpeakLocation: NSObject, AVSpeechSynthesizerDelegate {
     var hasAnnouncedFirstLocation = false
 
     // Create a speech synthesizer.
-    var synthesizer = AVSpeechSynthesizer()
+    let synthesizer = AVSpeechSynthesizer()
     let audioSession = AVAudioSession.sharedInstance()
 
     override init() {
@@ -24,6 +24,10 @@ public class SpeakLocation: NSObject, AVSpeechSynthesizerDelegate {
     }
 
     public func speak(speech: String) {
+        if speech == prev {
+            return
+        }
+
         setSession(isActive: true, session: audioSession)
 
         if AVSpeechSynthesisVoice.speechVoices().count == 0 {
@@ -33,7 +37,7 @@ public class SpeakLocation: NSObject, AVSpeechSynthesizerDelegate {
 
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
 
-        if(hasAnnouncedFirstLocation == true) {
+        if(hasAnnouncedFirstLocation) {
             utterance = AVSpeechUtterance(string: "You are now entering " + speech)
         }
         else {
@@ -42,11 +46,8 @@ public class SpeakLocation: NSObject, AVSpeechSynthesizerDelegate {
         }
 
         // Tell the synthesizer to speak the utterance.
-        if(speech != prev) {
-            synthesizer.speak(utterance)
-            prev = speech
-        }
-
+        synthesizer.speak(utterance)
+        prev = speech
     }
 
     public func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
