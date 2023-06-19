@@ -8,20 +8,30 @@
 import Foundation
 import AVFoundation
 
-public class SpeakLocation: NSObject {
+public class SpeakLocation: NSObject, AVSpeechSynthesizerDelegate {
     static let speaker = SpeakLocation()
     var prev = ""
     var utterance = AVSpeechUtterance()
     var hasAnnouncedFirstLocation = false
 
     // Create a speech synthesizer.
-    let synthesizer = AVSpeechSynthesizer()
-    
-    public func speak(speech: String) {
-        let audioSession = AVAudioSession.sharedInstance()
-        try? audioSession.setCategory(AVAudioSession.Category.playback, options: [.duckOthers, .interruptSpokenAudioAndMixWithOthers])
+    var synthesizer = AVSpeechSynthesizer()
+    let audioSession = AVAudioSession.sharedInstance()
 
-        let voice = AVSpeechSynthesisVoice(language: "en-US")
+    override init() {
+        super.init()
+        synthesizer.delegate = self
+    }
+
+    public func speak(speech: String) {
+        setSession(isActive: true, session: audioSession)
+
+        if AVSpeechSynthesisVoice.speechVoices().count == 0 {
+            print("No available speech voices")
+            return
+        }
+
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
 
         if(hasAnnouncedFirstLocation == true) {
             utterance = AVSpeechUtterance(string: "You are now entering " + speech)
@@ -31,9 +41,6 @@ public class SpeakLocation: NSObject {
             hasAnnouncedFirstLocation = true
         }
 
-        // Assign the voice to the utterance.
-        utterance.voice = voice
-
         // Tell the synthesizer to speak the utterance.
         if(speech != prev) {
             synthesizer.speak(utterance)
@@ -42,11 +49,17 @@ public class SpeakLocation: NSObject {
 
     }
 
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        guard !synthesizer.isSpeaking else { return }
-
-        let audioSession = AVAudioSession.sharedInstance()
-
-        try? audioSession.setActive(false)
+    public func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        setSession(isActive: false, session: audioSession)
     }
+
+    private func setSession(isActive: Bool, session: AVAudioSession) {
+        if isActive {
+            try! session.setCategory(AVAudioSession.Category.playback, options: AVAudioSession.CategoryOptions.duckOthers)
+        } else {
+            try! session.setCategory(AVAudioSession.Category.ambient, options: AVAudioSession.CategoryOptions.mixWithOthers)
+        }
+        try! session.setActive(isActive, options: .notifyOthersOnDeactivation)
+    }
+
 }
