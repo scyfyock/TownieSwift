@@ -27,13 +27,13 @@ public class SpeakLocation: NSObject, AVSpeechSynthesizerDelegate {
         if speech == prev {
             return
         }
-
-        setSession(isActive: true, session: audioSession)
-
+        
         if AVSpeechSynthesisVoice.speechVoices().count == 0 {
             print("No available speech voices")
             return
         }
+
+        setSession(isActive: true, session: audioSession)
 
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
 
