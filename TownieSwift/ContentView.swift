@@ -17,12 +17,12 @@ extension String {
     static let stopButtonTitle = "End"
     static let alertTitle: String = "No Location Found"
     static let titleIcon = "house.lodge.circle"
-    static let appTitle = "Townie+"
-    static let intro1 = "Welcome to Townie+!"
+    static let appTitle = "Townnouncer"
+    static let intro1 = "Welcome to Townnouncer!"
     static let intro2 = "This app tracks your current location and tells you what town you are in!"
     static let intro3 = "Press Start to start the application. \nPress Stop to stop to see this menu again."
     static let locationDetails = "Location Details:"
-    static let locationError = "Townie will be unable to display a map or show the towns that you have visited without your location. Please go to Settings > Townie > Location and Select 'Always'"
+    static let locationError = "Townnouncer will be unable to display a map or show the towns that you have visited without your location. Please go to Settings > Townnouncer > Location and Select 'Always'"
     static let townsVisitedTitle = "Towns Visited"
     
 }

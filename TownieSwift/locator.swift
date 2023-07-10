@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import CoreLocation
 import MapKit
+import Combine
 
 public class locator: NSObject, ObservableObject,
                                           CLLocationManagerDelegate {
@@ -25,6 +26,7 @@ public class locator: NSObject, ObservableObject,
         self.hasGivenLocation = true
         super.init()
         locationManager = CLLocationManager()
+        locationManager.allowsBackgroundLocationUpdates = true
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -96,6 +98,7 @@ public class locator: NSObject, ObservableObject,
 
                     if(!self.placesTraveled.contains(placemarks.first?.locality ?? "")) {
                         self.placesTraveled.append(placemarks.first?.locality ?? "")
+                        
                     }
 
                     self.previousTime = seconds
